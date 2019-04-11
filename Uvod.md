@@ -25,46 +25,47 @@ setwd("C:...\\Data")
 # Instalace balíčku
 install.packages("readxl")
 library("readxl")
-
+#
+#
 # Práce s listy
-
+#
 # Výčet listů v daném excelovském souboru
 excel_sheets()
-
+#
 # Načtení souboru formátu excel
 read_excel() 
 excel_sheets("Resources.xlsx")
 
-
+#
 # Chci pracovat s konkrétním sheetem
 Jméno_datové_množiny = read_excel("Soubor.xlsx", sheet = "Název_sheetu")
 View(Jméno_datové_množiny)
-
+#
 # Nevím název sheetuz, vím kolikátý je:
 Jméno_datové_množiny = read_excel("Soubor.xlsx", sheet = 2)
 View(Jméno_datové_množiny)
-
+#
 # Práce s názvy proměnných 
-
+#
 # Následující příkaz importuje data z třetího listu souboru Soubor, a R sám nazve sloupce (proměnné)
-
+#
 Jméno_datové_množiny = read_excel("Soubor.xlsx", sheet = 3, col_names = FALSE)
 View(Jméno_datové_množiny)
-
+#
 # Následující příkaz importuje data z třetího listu souboru Soubor, a proměnné nazveme my
-
+#
 Jméno_datové_množiny = read_excel("Soubor.xlsx", sheet = 3, col_names = c("Proměnná1", "Proměnná2", "Proměnná3",
 "Proměnná4"))​
 View(Jméno_datové_množiny)
-
+#
 # Někdy jsou v Excelu zbytečný řádky (třeba info o tom kdo data kódoval, datum...), které chceme přeskočit
 # Na to použijeme příkaz skip
-
-Jméno_datové_množiny = read_excel("Soubor.xlsx", sheet = 4, skip = 15)
 # Příkaz na řtvrtém sheetu souboru Soubor přeskočí prvních 15 řádků, výsledek se načte do proměnné Jméno_datové_množiny
+Jméno_datové_množiny = read_excel("Soubor.xlsx", sheet = 4, skip = 15)
 
+#
 # Čištění dat
-
+#
 # Smaže všechny řádky (případy) které obsahují chybějící hodnoty NA
 
 Data_clean = na.omit(Data)
