@@ -105,20 +105,22 @@ head(Data, n = 10)
 tail(Data, n = 10)
 
 # Explorace hrubých dat s balíčkem psych
-
+#
 # Instalace balíčku
-
+#
 install.packages("psych")
 library("psych")
-
+#
 # V balíčku je jednoduchý příkaz na kontrolu struktury dat
 describe(bmi_1)
-
+#
 # Histogram
-hist(Data$Proměnná)
-# Ilustruje rozložení proměnných - je normální?
+# Ilustruje rozložení proměnných - je rozložení normální?
 
+hist(Data$Proměnná)
+#
+#
 # Scatterplot
-plot(Data$Proměnná1, Data$Proměnná2)
 # Scatterplot je třeba provést prakticky vždy, graficky ilustruje vztah mezi proměnnými 
+plot(Data$Proměnná1, Data$Proměnná2)
 
